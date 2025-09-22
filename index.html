@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Photo and Document App</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css"
+    />
+  </head>
+  <body>
+    <h1>Photo and Document App</h1>
+
+    <label for="fileName">Enter a name:</label>
+    <input type="text" id="fileName" placeholder="e.g., JohnDoe" />
+
+    <hr />
+
+    <h2>Take a Photo</h2>
+    <button id="startPhotoBtn">Tomar foto</button>
+    <div id="cameraContainerPhoto" style="display: none">
+      <video id="videoPhoto" width="640" height="480" autoplay></video>
+      <button id="capturePhotoBtn">Capture</button>
+    </div>
+
+    <div id="previewContainerPhoto" style="display: none">
+      <canvas id="canvasPhoto" width="704" height="480"></canvas>
+      <img id="previewImagePhoto" src="" alt="Photo Preview" />
+      <button id="savePhotoBtn">Save</button>
+    </div>
+
+    <hr />
+
+    <h2>Scan a Document</h2>
+    <button id="startScanBtn">Scan Document</button>
+    <div id="cameraContainerScan" style="display: none">
+      <video id="videoScan" width="1280" height="720" autoplay></video>
+      <button id="captureScanBtn">Capture</button>
+    </div>
+
+    <div id="previewContainerScan" style="display: none">
+      <img id="previewImageScan" src="" alt="Document Preview" />
+      <button id="cropBtn">Crop</button>
+      <button id="addPageBtn">Add Another Page</button>
+    </div>
+
+    <div id="pdfDownloadContainer" style="display: none">
+      <button id="downloadPdfBtn">Download PDF</button>
+    </div>
+
+    <div id="cropperModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <img id="imageToCrop" src="" alt="Image to Crop" />
+        <button id="confirmCropBtn">Confirm Crop</button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
